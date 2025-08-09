@@ -98,7 +98,7 @@ This will:
 * Load and preprocess the dataset from `data/train`.
 * Train the CNN model for 5 epochs (you can modify this in the script).
 * Evaluate accuracy on a held-out test set.
-* Save the trained model as `cat_dog_model.pth`.
+* Save the trained model as `cat_v_dog_cnn.pth`.
 
 **Tips:**
 
@@ -148,7 +148,7 @@ python app.py
 ├── test_img.py            # Single image inference script
 ├── network.py             # Model architecture
 ├── ImageLoader.py         # (Optional) custom dataset loader (not required with current train.py)
-├── cat_dog_model.pth      # Saved model weights (after training)
+├── cat_v_dog_cnn.pth      # Saved model weights (after training)
 └── README.md              # This file
 ```
 
