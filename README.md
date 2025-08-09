@@ -65,8 +65,8 @@ data/
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/cats-vs-dogs-cnn.git
-   cd cats-vs-dogs-cnn
+   git clone https://github.com/PritamTheCoder/Cats_vs_Dogs_CNN.git
+   cd Cats_vs_Dogs_CNN
    ```
 
 2. Create a virtual environment and activate it:
