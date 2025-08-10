@@ -45,6 +45,7 @@ data/
 
 * Place all training images in `data/train` under folders `cats` and `dogs`.
 * Images should be RGB format and of reasonable size.
+* Dataset can be found in Kaggle datasets.
 
 ---
 
@@ -62,26 +63,26 @@ data/
 
 ## Installation
 
-1. Clone this repository:
+Clone this repository:
 
-   ```bash
-   git clone https://github.com/PritamTheCoder/Cats_vs_Dogs_CNN.git
-   cd Cats_vs_Dogs_CNN
-   ```
+```bash
+git clone https://github.com/PritamTheCoder/Cats_vs_Dogs_CNN.git
+cd Cats_vs_Dogs_CNN
+```
 
-2. Create a virtual environment and activate it:
+Create a virtual environment and activate it:
 
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # Linux/Mac
-   .venv\Scripts\activate     # Windows
-   ```
+```bash
+python -m venv .venv
+source .venv/bin/activate      # Linux/Mac
+.venv\Scripts\activate         # Windows
+```
 
-3. Install dependencies:
+Install dependencies:
 
-   ```bash
-   pip install torch torchvision scikit-learn pillow flask
-   ```
+```bash
+pip install torch torchvision scikit-learn pillow flask
+```
 
 ---
 
@@ -90,19 +91,19 @@ data/
 Run the training script:
 
 ```bash
-python train.py
+python train_cnn.py
 ```
 
 This will:
 
 * Load and preprocess the dataset from `data/train`.
-* Train the CNN model for 5 epochs (you can modify this in the script).
+* Train the CNN model for 5 epochs (modifiable in the script).
 * Evaluate accuracy on a held-out test set.
 * Save the trained model as `cat_v_dog_cnn.pth`.
 
 **Tips:**
 
-* Make sure your dataset directory exists and is correctly structured.
+* Ensure your dataset directory exists and is correctly structured.
 * Use GPU if available for faster training.
 
 ---
@@ -115,7 +116,7 @@ To test a single image with the trained model:
 python test_img.py path/to/your/image.jpg
 ```
 
-This script will load the saved model, preprocess the input image, run inference, and print the prediction with confidence.
+This script loads the saved model, preprocesses the input image, runs inference, and prints the prediction with confidence.
 
 ---
 
@@ -123,15 +124,27 @@ This script will load the saved model, preprocess the input image, run inference
 
 The web app allows you to upload an image and get a prediction through a user-friendly interface.
 
-1. Run the Flask app:
+Run the Flask app locally:
 
 ```bash
 python app.py
 ```
 
-2. Open your browser and navigate to `http://127.0.0.1:5000`
+Open your browser and navigate to:
 
-3. Upload an image of a cat or dog, and see the prediction displayed.
+```
+http://127.0.0.1:5000
+```
+
+Upload an image of a cat or dog, and see the prediction displayed instantly.
+
+---
+
+### Hosted Demo
+
+You can also try the live web application hosted at:
+**\[Your Render or Deployment URL Here]**
+
 
 ---
 
@@ -143,13 +156,13 @@ python app.py
 │   └── train/
 │       ├── cats/
 │       └── dogs/
-├── app.py                 # Flask web app
-├── train.py               # Training script
-├── test_img.py            # Single image inference script
-├── network.py             # Model architecture
-├── ImageLoader.py         # (Optional) custom dataset loader (not required with current train.py)
-├── cat_v_dog_cnn.pth      # Saved model weights (after training)
-└── README.md              # This file
+├── app.py                   # Flask web application
+├── train_cnn.py             # Training script
+├── test_img.py              # Single image inference script
+├── network.py               # Model architecture 
+├── dataset_loader.py        # Custom dataset loader (optional)
+├── cat_v_dog_cnn.pth        # Saved model weights (after training)
+└── README.md                # This file
 ```
 
 ---
@@ -158,5 +171,5 @@ python app.py
 
 * Uses PyTorch and torchvision libraries.
 * Inspired by common Cats vs Dogs classification tutorials.
-* Thanks to the [Dogs vs Cats dataset on Kaggle](https://www.kaggle.com/c/dogs-vs-cats/data).
+* Thanks to the Dogs vs Cats dataset on Kaggle.
 
