@@ -45,7 +45,7 @@ data/
 
 * Place all training images in `data/train` under folders `cats` and `dogs`.
 * Images should be RGB format and of reasonable size.
-* Dataset can be found in Kaggle datasets.
+* Dataset can be found and organized from Kaggle datasets.
 
 ---
 
@@ -97,7 +97,7 @@ python train_cnn.py
 This will:
 
 * Load and preprocess the dataset from `data/train`.
-* Train the CNN model for 5 epochs (modifiable in the script).
+* Train the CNN model for 8 epochs (modifiable in the script: train_cnn.py).
 * Evaluate accuracy on a held-out test set.
 * Save the trained model as `cat_v_dog_cnn.pth`.
 
