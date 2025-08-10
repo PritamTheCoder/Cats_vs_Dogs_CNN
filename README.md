@@ -156,6 +156,10 @@ You can also try the live web application hosted at:
 │   └── train/
 │       ├── cats/
 │       └── dogs/
+├── template/
+│   └── index.html           # html for app.py Flask web application
+├── static/
+│   └── style.css            # css for app.py Flask web application
 ├── cat_v_dog_cnn.pth        # Pretrained model weights (example, for quick testing)
 ├── app.py                   # Flask web application
 ├── train_cnn.py             # Training script
@@ -164,6 +168,8 @@ You can also try the live web application hosted at:
 ├── network.py               # Model architecture 
 ├── dataset_loader.py        # Custom dataset loader (optional)
 ├── cat_v_dog_cnn.pth        # Saved model weights (after training)
+├── requirements.txt         # Virtual environment requirements
+├── .gitignore               
 └── README.md                # This file
 ```
 
