@@ -81,7 +81,7 @@ source .venv/bin/activate      # Linux/Mac
 Install dependencies:
 
 ```bash
-pip install torch torchvision scikit-learn pillow flask
+pip install -r requirements.txt
 ```
 
 ---
