@@ -156,9 +156,11 @@ You can also try the live web application hosted at:
 │   └── train/
 │       ├── cats/
 │       └── dogs/
+├── cat_v_dog_cnn.pth        # Pretrained model weights (example, for quick testing)
 ├── app.py                   # Flask web application
 ├── train_cnn.py             # Training script
 ├── test_img.py              # Single image inference script
+├── dataset_download.py      # Script to download & organize dataset from UR
 ├── network.py               # Model architecture 
 ├── dataset_loader.py        # Custom dataset loader (optional)
 ├── cat_v_dog_cnn.pth        # Saved model weights (after training)
