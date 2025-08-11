@@ -148,6 +148,13 @@ You can also try the live web application hosted at:
 
 ---
 
+### Example Predictions
+
+Upload an image of a cat or dog, and the model will classify it instantly. Below are some example screenshots from the web app:
+
+
+---
+
 ## Project Structure
 
 ```
