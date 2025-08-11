@@ -53,13 +53,50 @@
     </main>
     <script>
   const fileInput = document.getElementById('file');
+  const dropzone = document.querySelector('.dropzone');
   const instructions = document.querySelector('.drop-instructions');
 
-  fileInput.addEventListener('change', () => {
+  // Update instructions on file select (click or drag)
+  function updateInstructions() {
     if (fileInput.files.length > 0) {
       instructions.textContent = fileInput.files[0].name;
     } else {
       instructions.textContent = "Click to choose a file or drag one here";
+    }
+  }
+
+  fileInput.addEventListener('change', updateInstructions);
+
+  // Prevent default drag behaviors
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropzone.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+
+  // Highlight dropzone on dragenter/dragover
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropzone.addEventListener(eventName, () => {
+      dropzone.classList.add('dragover');
+    });
+  });
+
+  // Remove highlight on dragleave/drop
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropzone.addEventListener(eventName, () => {
+      dropzone.classList.remove('dragover');
+    });
+  });
+
+  // Handle dropped files
+  dropzone.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+
+    if (files.length) {
+      fileInput.files = files; // Set files to input
+      updateInstructions();
     }
   });
 </script>

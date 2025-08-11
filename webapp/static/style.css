@@ -62,6 +62,11 @@ body{
   font-size:0.95rem;
 }
 
+.dropzone.dragover {
+  border-color: #007bff;
+  background-color: #e6f0ff;
+}
+
 /* Actions */
 .actions{
   display:flex;
