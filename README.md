@@ -156,21 +156,27 @@ You can also try the live web application hosted at:
 │   └── train/
 │       ├── cats/
 │       └── dogs/
-├── template/
-│   └── index.html           # html for app.py Flask web application
-├── static/
-│   └── style.css            # css for app.py Flask web application
-├── cat_v_dog_cnn.pth        # Pretrained model weights (example, for quick testing)
-├── app.py                   # Flask web application
-├── train_cnn.py             # Training script
-├── test_img.py              # Single image inference script
-├── dataset_download.py      # Script to download & organize dataset from UR
-├── network.py               # Model architecture 
-├── dataset_loader.py        # Custom dataset loader (optional)
-├── cat_v_dog_cnn.pth        # Saved model weights (after training)
-├── requirements.txt         # Virtual environment requirements
-├── .gitignore               
-└── README.md                # This file
+│
+├── webapp/
+│   ├── templates/
+│   │   └── index.html           # HTML for app.py Flask web application
+│   │
+│   ├── static/
+│   │   └── style.css            # CSS for app.py Flask web application
+│   │
+│   ├── cat_v_dog_cnn.pth        # Pretrained model weights (example, for quick testing)
+│   ├── app.py                   # Flask web application
+│   ├── network.py               # Minimal model architecture just for inference
+│
+├── train_cnn.py                 # Training script (uses root network.py)
+├── test_img.py                   # Single image inference script
+├── dataset_download.py           # Script to download & organize dataset from URL
+├── dataset_loader.py             # Custom dataset loader (optional)
+├── network.py                    # Full model architecture for training
+├── requirements.txt              # Virtual environment requirements
+├── .gitignore
+└── README.md
+
 ```
 
 ---
