@@ -30,15 +30,8 @@ class Network(Module):
         x = relu(x)
 
         x = dropout(x)
-
-        # Flatten to (batch, features)
         x = x.view(x.size(0), -1)
-
-        # Reshape to (batch, 1, features) for AdaptiveAvgPool1d
-        x = x.unsqueeze(1)  # add channel dimension
-
-        # Adaptive average pooling to output length=256
-        x = self.adPooling(x).squeeze(1)  # remove channel dim
+        x = self.adPooling(x).squeeze()
 
         x = self.fc1(x)
         x = relu(x)
@@ -47,7 +40,6 @@ class Network(Module):
         x = relu(x)
 
         return self.out(x)
-
 
 # Note:
 # This file is now architecture-only.
