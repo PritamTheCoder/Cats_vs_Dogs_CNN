@@ -143,7 +143,7 @@ Upload an image of a cat or dog, and see the prediction displayed instantly.
 ### Hosted Demo
 
 You can also try the live web application hosted at:
-**\[Your Render or Deployment URL Here]**
+**\[https://meoworwoof.onrender.com]**
 
 
 ---
