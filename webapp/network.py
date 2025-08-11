@@ -1,10 +1,8 @@
+import torch
 from torch.nn import Module, Conv2d, Linear, MaxPool2d, AdaptiveAvgPool1d
 from torch.nn.functional import relu, dropout
-from dataset_loader import *
-
 
 class Network(Module):
-
     def __init__(self):
         super(Network, self).__init__()
         self.conv_1 = Conv2d(in_channels=3, out_channels=64, kernel_size=5)
@@ -43,15 +41,7 @@ class Network(Module):
 
         return self.out(x)
 
-
-imageLoader = ImageLoader(trainData, transform)
-
-dataLoader = DataLoader(imageLoader, batch_size=10, shuffle= True)
-
-data = iter(dataLoader)
-
-images = next(data)
-
-network = Network()
-out = network(images[0])
-print(out)
+# Note:
+# This file is now architecture-only.
+# It does NOT load any datasets or run training code.
+# app.py will handle model loading and inference.
