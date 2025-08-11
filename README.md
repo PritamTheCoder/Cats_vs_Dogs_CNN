@@ -152,6 +152,15 @@ You can also try the live web application hosted at:
 
 Upload an image of a cat or dog, and the model will classify it instantly. Below are some example screenshots from the web app:
 
+![Entry_point](img/state.png)
+Enrty point of webapp.
+
+![Dog Test](img/dog.png)
+Dog image correctly predicted as a dog.
+
+![Cat Test](img/cat.png)
+Cat image correctly predicted as a cat.
+
 
 ---
 
