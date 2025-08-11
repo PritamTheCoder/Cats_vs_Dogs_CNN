@@ -3,7 +3,7 @@ import requests
 from io import BytesIO
 from pathlib import Path
 from PIL import Image
-
+import time
 from flask import Flask, render_template, request, redirect, flash
 import torch
 import torch.nn.functional as F
@@ -15,7 +15,7 @@ from network import Network  # your CNN architecture
 BASE_DIR = Path(__file__).resolve().parent
 HF_MODEL_URL = "https://huggingface.co/AurevinP/Cat_vs_Dog_cnn/resolve/main/cat_v_dog_cnn.pth"
 MODEL_PATH = BASE_DIR / "cat_v_dog_cnn.pth"
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+DEVICE = torch.device("cpu")
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "bmp"}
 
 app = Flask(__name__)
@@ -61,16 +61,19 @@ def allowed_file(filename: str) -> bool:
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def predict_image(img: Image.Image):
+    start = time.time()
     x = transform(img).unsqueeze(0).to(DEVICE)
     with torch.no_grad():
         out = model(x)
         if out.dim() == 1:
             out = out.unsqueeze(0)
         probs = F.softmax(out, dim=1)
+        duration = time.time() - start
         prob_values = probs.cpu().numpy()[0]
         predicted_class = int(prob_values.argmax())
         predicted_prob = float(prob_values[predicted_class])
         label = CLASS_MAP.get(predicted_class, str(predicted_class))
+        print(f"[INFO] Inference took {duration:.3f} seconds")
         return label, predicted_prob
 
 # -----------------------------
